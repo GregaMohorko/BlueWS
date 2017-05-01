@@ -1,6 +1,6 @@
 # BlueWS
 
-A simple REST Web Service library with business logic.
+A simple REST Web Service library with business logic (verification, user/action permissions, etc.).
 
 ## Documentation & Tutorials
 
