@@ -170,7 +170,9 @@ abstract class WebService
 		$data=InputUtility::getParameter($this->dataName, $this->inputMethod);
 		if($data!==null){
 			//$data=utf8_encode($data);
-			$data=json_decode($data);
+			$jsonData=json_decode($data,true);
+			// return raw data if json decoding was not successful
+			$data=$jsonData===null ? $data : $jsonData;
 		}
 		// TODO decryption
 		$this->action=$action;
