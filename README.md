@@ -23,5 +23,10 @@ class HelloWorld extends BaseAction
 ## Requirements
 PHP version >= 5.5
 
-## License
+## Author and License
+
+Grega Mohorko ([www.mohorko.info](http://www.mohorko.info))
+
+Copyright (c) 2017 Grega Mohorko
+
 [Apache License 2.0](./LICENSE)
