@@ -1,7 +1,7 @@
 # BlueWS
 A simple REST Web Service library with business logic (client verification, user permission per action, etc.).
 
-Latest release: [v1.1](https://github.com/GregaMohorko/BlueWS/releases/latest)
+[![Release](https://img.shields.io/github/release/GregaMohorko/BlueWS.svg?style=flat-square)](https://github.com/GregaMohorko/BlueWS/releases/latest)
 
 ## Documentation & Tutorials
 You can read the documentation and tutorials under the [Wiki](https://github.com/GregaMohorko/BlueWS/wiki).
