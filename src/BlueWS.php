@@ -26,20 +26,22 @@
  * @copyright May 1, 2017 Grega Mohorko
  */
 
+define("BLUEWS_DIR", __DIR__."/");
+
 // load configuration file
-$config=parse_ini_file("config.ini");
+$config=parse_ini_file(BLUEWS_DIR."config.ini");
 if(!$config){
 	$config=[];
 }
 
 // initialize
-require_once 'Configuration/BlueWSProperties.php';
+require_once BLUEWS_DIR.'Configuration/BlueWSProperties.php';
 \BlueWS\Configuration\BlueWSProperties::init($config);
 
 // include all files
-require_once 'Service/ActionExecuter.php';
-require_once 'Service/BaseAction.php';
-require_once 'Service/ClientVerificationResultEnum.php';
-require_once 'Service/PostLoginAction.php';
-require_once 'Service/WebService.php';
-require_once 'Utility/InputUtility.php';
+require_once BLUEWS_DIR.'Service/ActionExecuter.php';
+require_once BLUEWS_DIR.'Service/BaseAction.php';
+require_once BLUEWS_DIR.'Service/ClientVerificationResultEnum.php';
+require_once BLUEWS_DIR.'Service/PostLoginAction.php';
+require_once BLUEWS_DIR.'Service/WebService.php';
+require_once BLUEWS_DIR.'Utility/InputUtility.php';
