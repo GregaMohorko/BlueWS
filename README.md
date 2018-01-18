@@ -1,6 +1,8 @@
 # BlueWS
 A simple REST Web Service library with business logic (client verification, user permission per action, etc.).
 
+Check the [BlueWSClient.NET](https://github.com/GregaMohorko/BlueWSClient.NET) for a .NET client library to use on the .NET client side.
+
 [![Release](https://img.shields.io/github/release/GregaMohorko/BlueWS.svg?style=flat-square)](https://github.com/GregaMohorko/BlueWS/releases/latest)
 
 ## Documentation & Tutorials
