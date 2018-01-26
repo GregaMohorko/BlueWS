@@ -64,17 +64,23 @@ abstract class BaseAction
 		}
 		
 		// output
-		header("Content-type: application/json");
-		$json=json_encode($result);
-		echo $json;
+		if($result!==null){
+			if(is_string($result)){
+				echo $result;
+			}else{
+				header("Content-type: application/json");
+				$json=json_encode($result);
+				echo $json;
+			}
+		}
 	}
 	
 	/**
 	 * Runs this action.
 	 * 
-	 * @return array
+	 * @return array An array that will be encoded to JSON.
 	 */
-	public abstract function run();
+	protected abstract function run();
 	
 	/**
 	 * This method is meant to be overriden. It will be called when an exception is thrown while running this action.

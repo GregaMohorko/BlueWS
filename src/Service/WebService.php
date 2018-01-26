@@ -92,7 +92,8 @@ abstract class WebService
 	public function serve()
 	{
 		// get or post?
-		if($_SERVER["REQUEST_METHOD"]!==$this->inputMethodName){
+		$requestMethod= InputUtility::getParameter_notNull("REQUEST_METHOD", INPUT_SERVER);
+		if($requestMethod!==$this->inputMethodName){
 			throw new Exception("Wrong request method.");
 		}
 		
@@ -126,7 +127,7 @@ abstract class WebService
 	}
 	
 	/**
-	 * This method is meant to be overriden. It will be called right after the action and data are read, decrypted and decoded.
+	 * This method is meant to be overriden. It will be called right after the action and data are read and decoded.
 	 * Use this method e.g. to establish a connection, log, etc..
 	 */
 	protected function onStartUp() { }
@@ -189,7 +190,6 @@ abstract class WebService
 			// return raw data if json decoding was not successful
 			$data=$jsonData===null ? $data : $jsonData;
 		}
-		// TODO decryption
 		$this->action=$action;
 		$this->data=$data;
 	}
@@ -211,6 +211,6 @@ abstract class WebService
 				return false;
 		}
 		
-		throw new Exception("Unknown client verification result.");
+		throw new Exception("Unknown client verification result '$result'.");
 	}
 }

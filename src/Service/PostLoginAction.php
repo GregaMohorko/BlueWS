@@ -37,9 +37,9 @@ abstract class PostLoginAction extends BaseAction
 	/**
 	 * Runs this action.
 	 * 
-	 * @return array
+	 * @return array An array that will be encoded to JSON.
 	 */
-	public function run()
+	protected function run()
 	{
 		$this->user=$this->getUser();
 		
@@ -73,7 +73,7 @@ abstract class PostLoginAction extends BaseAction
 	/**
 	 * Override this method to determine whether user verification should be done or not.
 	 * 
-	 * @return bool
+	 * @return bool Defaults to TRUE.
 	 */
 	protected function isUserVerificationRequired()
 	{
@@ -81,14 +81,19 @@ abstract class PostLoginAction extends BaseAction
 	}
 	
 	/**
+	 * Override this method if you want to verify the user access. This method will be called when 'isUserVerificationRequired' is TRUE.
+	 * 
 	 * @return bool|string TRUE if it passed, otherwise the reason for failing.
 	 */
-	protected abstract function verifyUserAccess();
+	protected function verifyUserAccess()
+	{
+		throw new Exception("Method 'verifyUserAccess' must be overriden if user verification is required.");
+	}
 	
 	/**
 	 * Called when/if verification is passed.
 	 * 
-	 * @return array
+	 * @return array An array that will be encoded to JSON.
 	 */
 	protected abstract function runInternal();
 }

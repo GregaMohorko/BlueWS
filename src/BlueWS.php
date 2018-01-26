@@ -19,7 +19,7 @@
  * 
  * Bootstrap file for BlueWS library.
  * 
- * Version 1.1
+ * Version 1.2.0.0
  * 
  * @project BlueWS
  * @author Grega Mohorko <grega@mohorko.info>

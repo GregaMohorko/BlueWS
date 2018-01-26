@@ -62,7 +62,7 @@ class BlueWSProperties
 	 */
 	public $ActionsFolder="";
 	/**
-	 * @var string Either "GET" or "POST".
+	 * @var string Either "GET" or "POST". Default is GET.
 	 */
 	public $DefaultInputMethod="GET";
 	/**
