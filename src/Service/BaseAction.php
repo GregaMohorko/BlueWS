@@ -64,14 +64,12 @@ abstract class BaseAction
 		}
 		
 		// output
-		if($result!==null){
-			if(is_string($result)){
-				echo $result;
-			}else{
-				header("Content-type: application/json");
-				$json=json_encode($result);
-				echo $json;
-			}
+		if(is_string($result)){
+			echo $result;
+		}else{
+			header("Content-type: application/json");
+			$json=json_encode($result);
+			echo $json;
 		}
 	}
 	
